@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Topluluk_Duyuru.Models.Duyuru>
+
+@{
+    ViewBag.Title = "Duyurular";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        th {
+            color: blue;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        p {
+            color: black
+        }
+    </style>
+    <h2>DUYURULAR</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                DUYURU KONUSU
+            </th>
+            <th>
+                DUYURU İÇERİĞİ
+            </th>
+            <th>
+                DUYURU SAHİBİ
+            </th>
+            <th>
+                BAŞLANGIÇ TARİHİ
+            </th>
+            <th>
+                BİTİŞ TARİHİ
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duyuruKonu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duyuruIcerik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duyuruSahip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duyuruBaslangic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duyuruBitis)
+                </td>
+            </tr>
+        }
+
+    </table>
